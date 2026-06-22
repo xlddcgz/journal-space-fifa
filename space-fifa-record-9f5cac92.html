@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日常视角下的世界杯 · 查询与对照</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #f5f3ef;
+            color: #2d2a24;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        .hero {
+            background: #1a1c1e;
+            color: #e8e3da;
+            padding: 4rem 1.5rem 3.2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #cba258, #d9b87a, #cba258);
+            opacity: 0.5;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 350;
+            letter-spacing: 2px;
+            margin-bottom: 0.6rem;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 580px;
+            margin: 0 auto;
+            color: #b7afa3;
+        }
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 2.8rem 1.5rem 3.5rem;
+        }
+        .intro-text {
+            font-size: 1.1rem;
+            margin-bottom: 2.2rem;
+            border-left: 4px solid #cba258;
+            padding-left: 1.2rem;
+            color: #3e3a32;
+        }
+        .intro-text a {
+            color: #8f6d3a;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #cba258;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .intro-text a:hover {
+            color: #b2823e;
+        }
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin: 2.5rem 0 1.2rem;
+            color: #343028;
+            border-bottom: 1px solid #dad5cc;
+            padding-bottom: 0.4rem;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+            margin: 1.8rem 0 2.2rem;
+        }
+        .feature-item {
+            background: #ffffff;
+            padding: 1.2rem 1.4rem 1.4rem;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 0 0 1px #ece8e1;
+            transition: box-shadow 0.2s;
+        }
+        .feature-item:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 0 0 1px #d6cfc2;
+        }
+        .feature-item strong {
+            display: block;
+            font-weight: 500;
+            font-size: 1.05rem;
+            color: #4f463b;
+            margin-bottom: 0.4rem;
+        }
+        .feature-item span {
+            font-size: 0.95rem;
+            color: #5b5449;
+        }
+        .feature-item a {
+            color: #8f6d3a;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-color: #dcc9ae;
+            font-weight: 450;
+        }
+        .feature-item a:hover {
+            color: #b07d3f;
+            text-decoration-color: #cba258;
+        }
+        .quote-block {
+            background: #efebe4;
+            padding: 1.6rem 1.8rem;
+            border-radius: 4px;
+            margin: 2.2rem 0;
+            font-style: normal;
+            border-left: 4px solid #b8a284;
+        }
+        .quote-block p {
+            margin-bottom: 0.4rem;
+            color: #3f3a32;
+        }
+        .quote-block small {
+            color: #7a6f60;
+            font-size: 0.9rem;
+        }
+        .faq-mini {
+            margin: 2rem 0 1.8rem;
+        }
+        .faq-mini h3 {
+            font-weight: 450;
+            font-size: 1.1rem;
+            margin-bottom: 0.6rem;
+            color: #3e372e;
+        }
+        .faq-mini p {
+            color: #4f4940;
+            margin-bottom: 1.2rem;
+            padding-left: 0.4rem;
+        }
+        .closing-note {
+            margin-top: 2.8rem;
+            padding-top: 1.6rem;
+            border-top: 1px solid #dcd5ca;
+            font-size: 0.98rem;
+            color: #595247;
+        }
+        .closing-note a {
+            color: #8f6d3a;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-color: #dcc9ae;
+        }
+        .closing-note a:hover {
+            color: #b2823e;
+        }
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero {
+                padding: 3rem 1rem 2.5rem;
+            }
+            .container {
+                padding: 2rem 1rem 2.8rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            .intro-text {
+                font-size: 1.02rem;
+                padding-left: 0.9rem;
+            }
+        }
+        @media (min-width: 820px) {
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <h1>世界杯 · 日常对照</h1>
+        <p>从赛程查询到历史延伸，一个更安静的阅读切面</p>
+    </header>
+
+    <main class="container">
+        <div class="intro-text">
+            <p>有时只是想知道下一场小组赛的时间，或者某一届决赛的比分。打开浏览器，在搜索框里输入“<a href="https://space-fifa.com">世界杯</a>”三个字，手指比大脑更快。但真正让人停下来的，往往是页面里那些被折叠的细节——某支球队的晋级路线、某个冷门规则的出处，或者一段你可能从未留意过的赛事沿革。这里不是一个新闻快讯站，更像一个可以慢慢翻的参考本。</p>
+        </div>
+
+        <h2 class="section-title">查询之外，还可以做什么</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <strong>赛程对照</strong>
+                <span>按日期或小组排列的比赛列表，方便横向比较同一轮次的对阵。也包含过去几届的完整赛历，适合做简单的数据回溯。</span>
+            </div>
+            <div class="feature-item">
+                <strong>历史记录与延伸阅读</strong>
+                <span>每届赛事都附有简明的背景介绍、参赛队伍变迁和决赛数据。如果你对某一年突然产生好奇，可以直接跳到那一页。<br><a href="https://space-fifa.com">世界杯</a>的归档页按年份整理，翻起来很顺手。</span>
+            </div>
+            <div class="feature-item">
+                <strong>规则与术语说明</strong>
+                <span>积分相同怎么排名？加时赛和历史沿革如何演变？页面里有一个轻量的规则板块，不用翻冗长的官方文件。</span>
+            </div>
+            <div class="feature-item">
+                <strong>队伍与场馆</strong>
+                <span>东道主场馆容量、城市信息，以及历届参赛队的简单档案。适合做旅行前功课或闲聊时的背景素材。</span>
+            </div>
+        </div>
+
+        <div class="quote-block">
+            <p>“大多数时候我只需要一个准确的日期，但常常顺带看到了两三段以前不知道的赛事故事。把<a href="https://space-fifa.com">世界杯</a>当作一个安静的延伸阅读入口用，反而比专门刷新闻更有收获。”</p>
+            <small>—— 一位偶尔查赛程的用户</small>
+        </div>
+
+        <div class="faq-mini">
+            <h3>常见疑问 · 简短摘要</h3>
+            <p><strong>页面的更新频率？</strong> 数据主要跟随国际足联官方信息同步，重大赛程变动后会尽快修正。不追热点新闻，内容偏向静态参考。</p>
+            <p><strong>移动端查看方便吗？</strong> 适配手机和窄屏，表格和列表做了响应式处理。在通勤路上打开也不会觉得拥挤。</p>
+            <p><strong>可以查到某一年预选赛的详细结果吗？</strong> 预选赛阶段数据目前以洲际汇总为主，部分年份有更细的分组记录，可以直接在站内搜索。</p>
+        </div>
+
+        <div class="closing-note">
+            <p>如果你也只是想找一个不吵不闹、条理清楚的地方，把关于<a href="https://space-fifa.com">世界杯</a>的那些零碎问题串起来——赛程、历史、规则，或者单纯想看一眼某届比赛的旧海报——这里大概刚好合适。页面没有弹窗，没有倒计时，只有数据和句子安安静静地待着，等你需要的时候翻一翻。</p>
+            <p style="margin-top: 0.8rem;">—— 日常查询·对照·延伸阅读 ——</p>
+        </div>
+    </main>
+</body>
+</html>
